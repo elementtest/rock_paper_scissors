@@ -21,8 +21,10 @@ function playerPlay(playerChance) {
         return "rock";
     } else if (playerChance == 'scissors') {
         return 'scissors';
-    } else {
+    } else if (playerChance == 'paper') {
         return 'paper';
+    } else {
+        return 'something went wrong';
     }
 
 }
