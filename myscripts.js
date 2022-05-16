@@ -34,6 +34,7 @@ playerSelection = playerPlay(prompt('what do you throw?').toLowerCase());
 console.log('player selection is ' + playerSelection);
 var ccScore = 0;
 var ppScore = 0;
+var tieScore = 0;
 function fFinal(playerSelection, computerSelection) {
 
     if (playerSelection === 'rock' && computerSelection === 'paper') {
@@ -56,14 +57,16 @@ function fFinal(playerSelection, computerSelection) {
         ppScore += 1;
     } else if (playerSelection == computerSelection) {
         console.log('it is a tie');
+        tieScore += 1;
     } else {
         console.log('something went wrong');
+        
     }
 }
 
 fFinal(playerSelection, computerSelection);
 console.log('begin for loop');
-for (i=0; i<5; i++) {
+for (i=0; i<4; i++) {
     fFinal(playerSelection, computerSelection);
     computerSelection = computerPlay();
     console.log('you already played::::' + playerSelection);
@@ -71,8 +74,9 @@ for (i=0; i<5; i++) {
     
 };
 
-console.log('comp score is ' + ccScore);
-console.log('player score is ' + ppScore);
+console.log('comp score is ::::  ' + ccScore);
+console.log('player score is :::: ' + ppScore);
+console.log('amount of times player tied the terminator >> ' + tieScore);
 if (ccScore > ppScore) {
     console.log('computer wins overall');
 } else if (ppScore > ccScore) {
