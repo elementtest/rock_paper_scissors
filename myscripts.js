@@ -1,5 +1,5 @@
 
-
+//randomly select rock paper or scissors for computer
 function computerPlay() {
     let compChance = Math.floor(Math.random() * 3);
     if (compChance === 0) {
@@ -14,7 +14,7 @@ computerSelection = computerPlay();
 
 console.log('computer selection is ' + computerSelection);
 
-
+//player selection rock paper or scissors
 function playerPlay(playerChance) {
     
     if (playerChance == 'rock') {
@@ -28,13 +28,15 @@ function playerPlay(playerChance) {
     }
 
 }
-
+//prompt player for choice and make case INSENSITIVE
 playerSelection = playerPlay(prompt('what do you throw?').toLowerCase());
-
 console.log('player selection is ' + playerSelection);
+
+//score card global variables comp wins, player wins or ties
 var ccScore = 0;
 var ppScore = 0;
 var tieScore = 0;
+//game comparison
 function fFinal(playerSelection, computerSelection) {
 
     if (playerSelection === 'rock' && computerSelection === 'paper') {
@@ -63,7 +65,7 @@ function fFinal(playerSelection, computerSelection) {
         
     }
 }
-
+//play five games
 fFinal(playerSelection, computerSelection);
 console.log('begin for loop');
 for (i=0; i<4; i++) {
@@ -73,10 +75,11 @@ for (i=0; i<4; i++) {
     console.log('computer plays ' + computerSelection);
     
 };
-
+//print total score after 5 games played
 console.log('comp score is ::::  ' + ccScore);
 console.log('player score is :::: ' + ppScore);
 console.log('amount of times player tied the terminator >> ' + tieScore);
+//print who wins overall
 if (ccScore > ppScore) {
     console.log('computer wins overall');
 } else if (ppScore > ccScore) {
